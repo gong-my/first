@@ -1,0 +1,5 @@
+{
+  "workbench.commandPalette.experimental.enableNaturalLanguageSearch": false,
+  "files.autoGuessEncoding": false,
+  "liveServer.settings.CustomBrowser": "chrome"
+}

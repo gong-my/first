@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            width:150px;
+            border:1px solid #333;
+            list-style-position: inside;
+            padding:0;
+        }
+        .sub{
+            list-style-type:none;
+            display:none;
+        }
+        .main>li{
+            border-bottom:1px dashed #333;
+        }
+        .main>li:hover{
+            background-color: #ddd;
+        }
+        .main>li:hover .sub{
+            display:block;
+        }
+    
+    </style>
+</head>
+<body>
+    <ol class="main">
+        <li>시멘틱 태그 
+            <ol class="sub">
+                <li>1.1어쩌구</li>
+            </ol>
+        </li>
+        <li>지원이 부실한 태그
+            <ol class="sub">
+                <li>2.1어쩌구</li>
+            </ol>
+        </li>
+        <li>비권장 태그
+            <ol class="sub">
+                <li>3.1어쩌구</li>
+            </ol>
+        </li>
+    </ol>
+</body>
+</html>

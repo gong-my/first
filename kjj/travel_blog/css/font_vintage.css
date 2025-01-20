@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Hey Vintage';
+    src: url('../fonts/HeyVintageRegular.eot');
+    src: url('../fonts/HeyVintageRegular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/HeyVintageRegular.woff2') format('woff2'),
+        url('../fonts/HeyVintageRegular.woff') format('woff'),
+        url('../fonts/HeyVintageRegular.ttf') format('truetype'),
+        url('../fonts/HeyVintageRegular.svg#HeyVintageRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            position:relative;
+            overflow:hidden;
+        }
+        .box{
+            width:100px;
+            height:100px;
+            background:red;
+            position:absolute;
+            top:100px;
+            left:0;
+        }
+        .start{
+            top:500px;
+            left:0;
+            position:absolute;
+        }
+        .stop{
+            top:500px;
+            right:0;
+            position:absolute;
+        }
+    </style>
+        <script src="../js/jquery-1.12.4.js"></script>
+        <script>
+            $(document).ready(function(){
+              $(".start").click(function(){
+                $('.box').animate({
+                    left: '1600px'
+                },1000);
+              });
+              $('.stop').click(function(){
+                $('.box').stop();
+              });
+            });
+        </script>       
+</head>
+<body>
+    <div class="box"></div>
+    <button class="start">시작</button>
+    <button class="stop">중지</button>
+</body>
+</html>

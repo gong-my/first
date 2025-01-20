@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="getDate"></h1>
+    <script>
+        const arrday= [`일`,`월`,`화`,`수`,`목`,`금`,`토`];
+        const now= new Date();
+        const year= now.getFullYear();
+        const month = now.getMonth() + 1;
+        const date = now.getDate();
+        const hours= now.getHours(); //24
+        const ampm = hours >= 12 ? '오후' : '오전';
+        const halfours = hours % 12 === 0 ? 12 : hours % 12;
+        const min = now.getMinutes();
+        const day = arrday[now.getDay()];
+        
+        document.getElementById("getDate").innerHTML=
+      (`지금은${year}년 ${month}월 ${date}일 ${ampm} ${halfours}시${minute}분 입니다 `);
+
+    </script>
+</body>
+</html>

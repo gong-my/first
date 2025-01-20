@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="myForm" action="function.html" onsubmit="return validateForm()">
+        <input type ="text" name="userid">
+        <button type="submit">전송</button>
+    </form>
+    <script>
+        function validateForm(){
+        const form  = document.forms['myForm'];
+        const userid = form['userid'].value;
+
+        if(!userid){
+            alert('아이디를 입력하시오.');
+            return false;
+        }
+        if(userid.length < 3){
+            alert('아이디는 세자 이상이요');
+            return false;
+        }
+        }
+    </script>
+</body>
+</html>
