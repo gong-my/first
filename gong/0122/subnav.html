@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .sub {
+        display: none;
+      }
+      /* .main>li:hover ul.sub{ */
+      /* display: block; */
+    </style>
+    <script src="/gong/class/jquery/js/jquery-1.12.4.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".main>li").hover(function () {
+          $(this).find(".sub").stop().slideToggle();
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <ul class="main">
+      <li>
+        <a href="#">메뉴1</a>
+        <ul class="sub">
+          <li><a href="">서브1</a></li>
+          <li><a href="">서브2</a></li>
+          <li><a href="">서브3</a></li>
+          <li><a href="">서브4</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">메뉴2</a>
+        <ul class="sub">
+          <li><a href="">서브1</a></li>
+          <li><a href="">서브2</a></li>
+          <li><a href="">서브3</a></li>
+          <li><a href="">서브4</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">메뉴3</a>
+        <ul class="sub">
+          <li><a href="">서브1</a></li>
+          <li><a href="">서브2</a></li>
+          <li><a href="">서브3</a></li>
+          <li><a href="">서브4</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">메뉴4</a>
+        <ul class="sub">
+          <li><a href="">서브1</a></li>
+          <li><a href="">서브2</a></li>
+          <li><a href="">서브3</a></li>
+          <li><a href="">서브4</a></li>
+        </ul>
+      </li>
+    </ul>
+  </body>
+</html>

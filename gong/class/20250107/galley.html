@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{ box-sizing: border-box;}
+        body{
+            background:#ededed;
+            font-family: "Noto Sans KR", sans-serif;
+            color:#333;
+            margin:0;
+            padding:0;
+        }
+        a{
+           text-decoration: none;
+           color:#333;
+        }
+        .container{
+            width:1200px;
+            background:#fff;
+            margin-left:auto;
+            margin-right:auto;
+        }
+        header{
+            padding:15px 30px;
+            border-bottom:1px solid #ddd;
+            margin-bottom:30px;
+        }
+        a.logo{
+            font-size:25px;
+            font-weight:700;
+            float:left;
+            margin-right:40px;
+        }
+        a.logo i{
+            font-size:2em;
+            vertical-align: middle;
+        }
+        ul {
+            list-style:none;
+            margin:0;
+            padding:0;
+            margin-top:15px;
+            width:1000px;
+        }
+        ul::after{
+            content:"";
+            clear:both;
+            display:table;
+        }
+        ul.main > li{
+            float:left;
+            position:relative;
+        }
+        ul.main>li>a{
+           display:block;
+           width:200px;
+           height:35px;
+           border:1px solid #ddd;
+           text-align:center;
+           font-size:18px;
+           font-weight:600;
+           line-height:35px;
+           margin-right:5px;
+        }
+        ul.main>li>a:hover{
+            background:#ddd;
+        }
+       
+        ul.sub{
+            width:200px;
+            margin:0;
+            padding:0;
+            border : 1px solid #ccc;
+            border-top : none;
+            padding-top:10px;
+            padding-bottom:10px;
+            display:none;
+            position:absolute;
+            z-index : 10;
+            background: #ffffff;
+            left:0;
+            top:30px;
+        
+        }
+        ul.main>li:hover ul.sub{
+            display:block;
+        }
+        ul.sub li{
+            text-align: center;
+            border-bottom: 1px dashed #ddd;
+        }
+        ul.sub li:last-child{
+            border:none;
+        }
+        ul.sub li a{
+            display:block;
+            padding:7px;
+
+        }
+        ul.sub li:hover{
+            background: #eee;
+        }
+        .gallery{
+            width:80%;
+            margin:30px auto;
+        }
+        .gallery::after{
+            content:"";
+            display:table;
+            clear:both;
+        }
+        .col{
+            width: 33.3333%;
+            float:left;
+            padding:20px;
+        }
+        .col img{
+            max-width:100%;
+
+        }
+        .card{
+            border:1px solid #dddd;
+        }
+        .card h1{
+            padding : 0 30px;
+            font-size : 20px;
+        }
+        .card p{
+            padding: 0 30px 20px;
+            height: 80px;
+            overflow:hidden;
+
+        }
+    </style>
+</head>
+<body>
+   <div class="container">
+      <header>
+         <a href="#" class="logo"><i class="fa-solid fa-hippo"></i> Hipo</a>
+         <ul class="main">
+            <!--부모인 li는 ㅔposition이 relative여야하고-->
+            <li><a href="#">첫 번째 메뉴</a>
+                <!--자식인 서브메뉴는 position이 absolute여야하고 z-index값이 높아야한다-->
+                <ul class="sub">
+                    <li><a href="#">서브메뉴 1-1</a></li>
+                    <li><a href="#">서브메뉴 1-2</a></li>
+                    <li><a href="#">서브메뉴 1-3</a></li>
+                </ul>
+            </li>
+            <li><a href="#">두 번째 메뉴</a>
+                <ul class="sub">
+                    <li><a href="#">서브메뉴 2-1</a></li>
+                    <li><a href="#">서브메뉴 2-2</a></li>
+                    <li><a href="#">서브메뉴 2-3</a></li>
+                </ul>
+            </li>
+            <li><a href="#">세 번째 메뉴</a>
+                <ul class="sub">
+                    <li><a href="#">서브메뉴 3-1</a></li>
+                    <li><a href="#">서브메뉴 4-2</a></li>
+                    <li><a href="#">서브메뉴 4-3</a></li>
+                </ul>
+            </li>
+            <li><a href="#">네 번째 메뉴</a>
+                <ul class="sub">
+                    <li><a href="#">서브메뉴 4-1</a></li>
+                    <li><a href="#">서브메뉴 4-2</a></li>
+                    <li><a href="#">서브메뉴 4-3</a></li>
+                </ul>
+            </li>
+         </ul>
+      </header>
+      <div class="gallery">
+        <div class="col">
+            <div class="card">
+               <a href="./images/001.jpg"> <img src="./images/001.jpg" alt="001"/></a>
+                <h1>갤러리 첫번째 이미지</h1>
+                <p>국민경제의 발전을 위한 중요정책의 수립에 관하여 대통령의 자문에 응하기 위하여 국민경제자문회의를 둘 수 있다.</p>
+                </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <a href="./images/002.jpg"> <img src="./images/002.jpg" alt="002"/></a>
+                <h1>갤러리 두번째 이미지</h1>
+                <p>국무회의는 대통령·국무총리와 15인 이상 30인 이하의 국무위원으로 구성한다. 군사재판을 관할하기 위하여 특별법원으로서 군사법원을 둘 수 있다</p>
+                </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <a href="./images/003.jpg"> <img src="./images/003.jpg" alt="003"/></a>
+                <h1>갤러리 세번째 이미지</h1>
+                <p>국회는 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가하거나 새 비목을 설치할 수 없다.</p>
+                </div>
+        </div>
+        <!--
+       
+            <div class="card">
+                <img src="./images/002.jpg" alt="002"/>
+                <h1>갤러리 두번째 이미지</h1>
+                <p>국무회의는 대통령·국무총리와 15인 이상 30인 이하의 국무위원으로 구성한다. 군사재판을 관할하기 위하여 특별법원으로서 군사법원을 둘 수 있다</p>
+                </div>
+                <div class="card">
+                    <img src="./images/003.jpg" alt="003"/>
+                    <h1>갤러리 세번째 이미지</h1>
+                    <p>국회는 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가하거나 새 비목을 설치할 수 없다.</p>
+                    </div>
+                -->
+
+        </div>
+   </div>
+</body>
+</html>

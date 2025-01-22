@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="thebody">
+    <button onclick="changeColor()">배경색 바꾸기</button>
+    <button onclick="addCount(12,30,14)">12+30+14</button>
+
+    <script>
+        const color=["green","pink","yellow","blue","red","purple"];
+        let i = 0;
+        function changeColor(){
+            i++;
+            if(i >= color.length) {
+                i=0;
+            }
+            document.getElementById("thebody").style.backgroundcolor = color[i];
+        }
+
+        function addCount(num1, num2, num3){
+            const man ="남자";
+            return man;
+        }
+
+    </script>
+</body>
+</html>

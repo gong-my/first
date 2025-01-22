@@ -1,0 +1,6 @@
+git init : git 관리 시작
+git status 현황
+git add 
+git commit
+git branch
+git switch

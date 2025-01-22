@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가위,바위,보 게임</title>
+    <style>
+        *{ box-sizing: border-box;}
+        body{
+            background-color:#efefef;
+        }
+        .container{
+            width:1000px;
+            border:15px;
+            margin: 60px auto;
+            background:#fff;
+            border-radius:15px;
+            box-shadow:0 0 20px 0 rgba(0,0,0,0.2);
+            padding:50px;
+        }
+        .text-center{
+            text-align: center;
+        }
+        .row{
+            width:700px;
+            margin: 50px auto 0;
+            display:flex;
+            justify-content: space-between;
+        }
+        .row>div{
+            width:300px;
+            border:1px solid #ddd;
+            border-radius:10px;
+        }
+        .imgbox{
+            width:150px;
+            height:150px;
+            margin-left:auto;
+            margin-right:auto;
+            text-align:center;
+            padding-bottom:30px;
+        }
+        .imgbox img{
+            width:100%;
+            height:100%;
+            object-fit: contain;
+        }
+        .red{
+            color:red;
+            text-align:center;
+            margin-bottom:50px;
+        }
+        table{
+            width:80%;
+            border-collapse: collapse;
+            margin: 0 auto 50px;
+        }
+        table, th, td{
+            border:1px solid #ddd;
+        }
+        th, td{
+            padding:15px;
+        }
+        th{
+            width:40%;
+        }
+        .gamebox{
+            display:flex;
+            justify-content: space-between;
+            margin:0 auto 50px;
+            width:50%;
+        }
+        .gamebox>div{
+            width:100px;
+            height:100px;
+            cursor:pointer;
+        }
+        .gamebox img{
+            width:100%;
+            height:100%;
+            object-fit: contain;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">가위바위보 게임</h1>
+        <p class="text-center">가위, 바위, 보 중 하나를 선택 하세요.</p>
+        <div class="row">
+            <div class="me">
+               <h2 class="text-center">나</h2>
+               <div class="imgbox" id="meimgbox">
+                 <img src="images/01.png" alt="가위" />
+               </div>
+            </div>
+            <div class="com">
+                <h2 class="text-center">
+                    컴퓨터
+                </h2>
+               <div class="imgbox" id="comimgbox">
+                  <img src="images/03.png" alt="보" />
+               </div>
+            </div>
+        </div>
+        <p class="red" id="result"></p>
+
+        <table>
+           <tr>
+              <th>총 게임</th> <td id="total-games">0</td>
+           </tr>
+           <tr>   
+              <th>승</th><td id="wins">0</td>
+           </tr>
+           <tr>   
+              <th>패</th><td id="losses">0</td>
+           </tr>
+           <tr>   
+              <th>승률</th><td id="win-rate">0%</td>
+           </tr>
+           <tr>
+              <td colspan="2" class="text-center">
+                 <button id="reload-button" disabled>게임 다시 시작</button>
+              </td>
+           </tr>
+        </table>    
+        <h3 class="text-center">이미지 하나를 선택하세요.</h3>
+        <div class="gamebox">
+           <div id="scissors"><img src="images/01.png" alt="가위" title="가위"></div>
+           <div id="rock"><img src="images/02.png" alt="바위" title="바위"></div>
+           <div id="paper"><img src="images/03.png" alt="보" title="보"></div>
+        </div>    
+    </div>
+    <script>
+       //const gamebox = document.getElementsByClassName("gamebox")[0];
+       const gamebox = document.querySelector(".gamebox"); 
+       const meimgbox = document.getElementById("meimgbox");
+       const comimgbox =document.getElementById("comimgbox");
+
+       const totalGames = document.getElementById("total-games");
+       const wins = document.getElementById("wins");
+       const losses = document.getElementById("losses");
+       const winRate = document.getElementById("win-rate");
+
+       const rs = document.getElementById("result");
+       const reloadButton = document.getElementById("reload-button");
+
+       const rpsArr = ['가위', '바위', '보'];
+       const imgSetting = ['01.png', '02.png', '03.png'];
+
+       let total = 0;
+       let winCount = 0;
+       let lossCount = 0;
+       let isProcessing = false;
+
+       gamebox.addEventListener("click", (e)=>{
+
+          if(e.target.tagName !== "IMG" || isProcessing ) return;
+         
+          isProcessing = true;
+
+          const comIndex = Math.floor(Math.random()*3);
+          const rps = e.target.alt;
+          const rpsIndex = rpsArr.indexOf(rps);
+     
+          meimgbox.innerHTML = `<img src="images/${imgSetting[rpsIndex]}" alt="${rpsArr[rpsIndex]}" />`;
+          comimgbox.innerHTML = `<img src="images/${imgSetting[comIndex]}" alt="${rpsArr[comIndex]}" />`;;
+
+          //결과판정
+          let result;
+          if( rpsIndex === comIndex ){
+             result = "비겼습니다.";
+          }else if (
+            (rpsIndex === 0 && comIndex === 2) ||
+            (rpsIndex === 1 && comIndex === 0) ||
+            (rpsIndex === 2 && comIndex === 1)
+          ){
+             result = `[${rpsArr[rpsIndex]}] 이겼습니다.`;
+             winCount++;
+          }else{
+             result = `[${rpsArr[rpsIndex]}] 졌습니다.`;
+             lossCount++;
+          }
+
+          total++;
+          //결과출력
+          rs.innerHTML = result;
+
+          //통계작성
+        
+        //    Math.round() --> 123.3443434=> 123   123.65656565=>124 == 정수
+        //    toFixed() ==> 4.237.toFixed(2) -- "4.24:" 문자열
+
+          const winRateRes = ((winCount / total) * 100).toFixed(2);
+
+          totalGames.textContent = total;
+          wins.textContent = winCount;
+          losses.textContent = lossCount;
+          winRate.textContent = winRateRes + "%";
+
+          //게임을 10번 하면 새로고침 가능
+          if(total >= 10) {
+             reloadButton.disabled = false; 
+          }
+          console.log(rpsIndex);
+          console.log(comIndex);
+
+          //작업이 끝나면 실행 해제
+          setTimeout(()=>{
+            isProcessing = false;
+          }, 300);
+       });
+
+       reloadButton.addEventListener('click', ()=>{
+          location.reload();
+       });
+
+    </script>
+</body>
+</html>

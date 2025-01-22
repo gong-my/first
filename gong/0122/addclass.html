@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../class/jquery/js/jquery-1.12.4.js"></script>
+  <script>
+    $(function () {
+      $("a").click(function () {
+        $("a").removeClass('act');
+        $(this).addClass('act');
+      });
+      
+      $('.box').click(function () {
+        if ($(this).hasClass('box2')) {
+        $(this).empty();
+        }
+      });
+    });
+  </script>
+  <style>
+    a {
+      display: inline-block;
+      width: 100px;
+      height: 35px;
+      border: 1px solid #ddd;
+      margin: 20px;
+      text-align: center;
+      line-height: 35px;
+    }
+
+    a:hover {
+      background-color: #ededed;
+    }
+
+    .act {
+      background: pink;
+      color: green;
+      font-weight: bold;
+    }
+
+    .box {
+      margin: 3px;
+      background: yellowgreen;
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <a href="#" class="act">
+    내소개
+  </a>
+
+  <a href="#"">
+    상품소개
+  </a>
+
+  <a href=" #">
+    상품판매
+  </a>
+  <div class="box box2">이곳은 box2가 있음</div>
+  <div class="box">이곳은 box2가 없음</div>
+</body>
+
+</html>

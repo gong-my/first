@@ -1,0 +1,31 @@
+body{
+    background-color:yellowgreen;
+}
+.imgbox{
+    width:300px;
+    height:300px;
+    border:1px solid #333;
+    overflow-y:auto;
+    background-color:#fff;
+    padding:30px;
+    background-image:url(../images/travel.png);
+    background-repeat: no-repaeat;
+    background-attachment:local;
+    /*attachement는 scroll,local, fixed 세가지 종류가 있다*/
+    background-size:contain;
+    /*background-size는 %,px,cover,contain 4가지 형식으로 지정가능*/
+    background-position:left bottom;
+}
+.snsicon-facebook{
+        width:155px;
+        height:155px;
+        background:url('../images/social.png') no-repeat -50px -550px;
+}
+.snsicon{
+    width:155px;
+    height:155px;
+    background:url('../images/social.png') no-repeat -220px -550px;
+}
+.blankbox{
+        height:1000px;
+}

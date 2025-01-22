@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+            /*style 주석*/
+    </style>
+</head>
+<body>
+   <h1>키보드의 아스키 코드를 확인해 봅시다.</h1>
+   <p>키를 누르면 아스키 코드가 표시됩니다.</p>
+   <p id="output"></p>
+   <script>
+    //키보드 이벤트 리스너
+    document.addEventListener('keydown', function(event){
+        const assCode = event.keycode || event.which; //아스키코드 가져오기
+        const key = event.key; //눌린 값
+        document.getElementById("output"). innerHTML 
+                        = `아스키코드 : ${asccode}, 키:${key}`;
+    })
+
+   </script>
+</body>
+</html>

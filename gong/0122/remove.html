@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="/gong/class/jquery/js/jquery-1.12.4.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#rem").click(function () {
+          $("#mem li:last-child").remove();
+        });
+
+        $("#app").click(function () {
+          const li = <li>member</li>;
+          const members = $("#mambers").val();
+          $("#mem").append("<li>member</li>");
+        });
+      });
+    </script>
+    <style>
+      #div {
+        border: 1px solid #000;
+        background: yellow;
+        padding: 40px;
+        width: 500px;
+        margin: 30px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <ol>
+      <li id="mem">member</li>
+    </ol>
+    <input type="text" id="mambers" placeholder="이름" />
+    <button id="app">멤버 추가</button>
+    <button id="rem">멤버 삭제</button>
+  </body>
+</html>

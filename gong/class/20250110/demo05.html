@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            background-color: lightcoral;
+            display:flex;
+                      /* flex-direction: row; column,column reverse,row(기본값),roe reverse 위 4가지로 방향 및 순서를 지정 가능*/
+            margin-left:auto;
+            margin-right: auto;
+            width: 500px;
+            flex-wrap:wrap;
+            justify-content: space-between;
+             /*wrap,nowraop(기본값),reverse wrap*/
+            /*두개를 합쳐서 flex-flow 표시는 flex-flow: row wrap;*/
+            /*justify content : flet-start,flex-end,center
+               justify content : space-around 모두 동일한 간격으로 균등,
+                                 space-between:양쪽 끝에 하나씩 놓는걸 기준으로 균등
+                                 space-evenly
+                                 align items:stretxh : 자식들까지 같이 부모값의 영향을 받음 자식값의 직접적인 크기를 지정해주지 않을경우*/
+
+        }
+        .container > div{
+            background-color: #fff;
+            margin:10px;
+            padding:20px;
+            font-size:30px
+    
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        
+    </div>
+</body>
+</html>

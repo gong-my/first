@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            border:1px solid #333;
+            width: 500px;
+            max width:80%;
+            padding:30px;
+            margin: 50px auto;
+        }
+        .box::first-letter{
+              font-size:25px;
+              font-weight:bold;
+        }
+        .box::before{
+            content: "요기야요기라고";
+            color:#dd4444;
+            display:block;
+
+        }
+        .box::after{
+            content: "요기가 after";
+            color:blue;
+        }
+
+        img{
+            width:300px;
+            float:right;
+        }
+        li:nth-child(even){
+            background:pink;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="box">
+        대통령은 국가의 독립·영토의 보전·국가의 계속성과 헌법을 수호할 책무를 진다. 감사원은 원장을 포함한 5인 이상 11인 이하의 감사위원으로 구성한다.
+        국가안전보장회의의 조직·직무범위 기타 필요한 사항은 법률로 정한다. 모든 국민은 법률이 정하는 바에 의하여 공무담임권을 가진다. 국가는 청원에 대하여 심사할 의무를 진다.
+        대통령은 국가의 독립·영토의 보전·국가의 계속성과 헌법을 수호할 책무를 진다. 감사원은 원장을 포함한 5인 이상 11인 이하의 감사위원으로 구성한다.
+        국가안전보장회의의 조직·직무범위 기타 필요한 사항은 법률로 정한다. 모든 국민은 법률이 정하는 바에 의하여 공무담임권을 가진다. 국가는 청원에 대하여 심사할 의무를 진다.
+
+     <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+     </ul>
+></body>
+</html>

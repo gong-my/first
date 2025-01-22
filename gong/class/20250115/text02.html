@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            background-color: yellow;
+            width: 500px;
+            height:500px;
+            position:relative;
+            margin:auto;
+        }
+        .box span{
+            background: yellowgreen;
+            position: absolute;
+            padding:40px;
+            left:50%;
+            top:50%;
+            transform:translate(-50%, -50%);
+        }
+          /* position이 absolute일 때 가운데 정렬하는 방법
+           calc(50%-크기의 절반);
+          transform:translate(-50%)*/
+        
+    </style>
+</head>
+<body>
+    <div class="box">
+        <span>
+            내용을 씁니다.
+        </span>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="/gong/class/jquery/js/jquery-1.12.4.min.js"></script>
+    <style>
+      div {
+        width: 300px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        margin: 10px;
+      }
+      .box1 {
+        background: yellow;
+      }
+      .box2 {
+        background: blue;
+      }
+      .box3 {
+        background: red;
+      }
+      .imgbox img{  
+        width: 50%;
+      }
+    </style>
+    <script>
+      $(document).ready(function () {
+        $("div").click(function () {
+          const color = $(this).css("background-color");
+          $(this).text(color);
+        });
+        $("button").click(function () {
+          $(".box1").css({ "background-color": "yellowgreen" });
+          $(".box2").css({ "background-color": "yellowgreen" });
+          $(".box3").css({ "background-color": "yellowgreen" });
+          // $("div").css("background","yellowgreen");
+        });
+        $(".imgbox").click(function(){
+          const w = $(this).width();
+          const h = $(this).height();
+          alert("가로: " + w + "세로: " + h);
+        })
+      });
+    </script>
+  </head>
+  <body>
+    <p>다음 div 박스를 클릭하면 컬러값을 해당 박스 안에 출력</p>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <p>아래 버튼을 클릭하면 위 박스의 색상을 yellowgreen으로 변경</p>
+    <button>클릭</button>
+<img src="/gong/class/images/pd/001.jpg" class="imgbox" alt="001">
+  </body>
+</html>
