@@ -13,6 +13,12 @@
   margin-right: -15px;
   position: relative;
 }
+.p-absolute{
+  position: absolute;
+}
+.p-relative{
+  position: relative;
+}
 [class^="col-"] {
   padding-left: 15px;
   padding-right: 15px;
