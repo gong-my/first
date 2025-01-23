@@ -281,6 +281,7 @@ h1.partner-title {
 .vod {
   margin-left: -3px;
   margin-right: -3px;
+  background-color: #ffe9e4;
 }
 
 .vod-box {
@@ -289,7 +290,7 @@ h1.partner-title {
   position: relative;
   width: 33.3333%;
   height: 350px;
-  overflow: hidden;
+  padding: 0 3px 50px;
 }
 
 .myvideo {
@@ -299,7 +300,8 @@ h1.partner-title {
   width: 100%;
   height: 350px;
 }
-.myvideo-btn{
+
+.myvideo-btn {
   width: 120px;
   height: 120px;
   border-radius: 50%;
@@ -311,7 +313,8 @@ h1.partner-title {
   transform: translate(-50%, -50%);
   transition: all 0.3s;
 }
-.myvideo-btn::after{
+
+.myvideo-btn::after {
   content: "";
   width: 0;
   height: 0;
@@ -325,9 +328,76 @@ h1.partner-title {
   transform: translate(-20%, -50%);
   transition: all 0.3s;
 }
-.myvideo-btn:hover{
+
+.myvideo-btn:hover {
   border-color: #fff;
 }
-.myvideo-btn:hover::after{
+
+.myvideo-btn:hover::after {
   border-left-color: #fff;
+}
+
+.vod-box p {
+  position: absolute;
+  bottom: -80px;
+  font-weight: 600;
+  font-size: 20px;
+  width: 300px;
+  left: calc(50% - 150px);
+}
+
+/* best places */
+
+.best {
+  margin: 90px auto;
+}
+
+.best h1 {
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.viewall {
+  font-size: 20px;
+  color: #c95f5f;
+  text-decoration: underline;
+  font-weight: 200;
+}
+
+.best .container {
+  margin-top: 80px;
+}
+
+.best .col {
+  width: 50%;
+  height: 427px;
+  position: relative;
+}
+
+.best .col img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+}
+
+.best-link {
+  color: black;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 45px;
+  background: rgba(255, 255, 255, .8);
+  position: absolute;
+  z-index: 2;
+  display: block;
+  text-align: center;
+  width: 200px;
+  height: 45px;
+  bottom: 50px;
+  left: calc(50% - 100px);
+  transition: all 0.3s;
+}
+
+.best-link:hover {
+  background: rgba(255, 255, 255, 1);
 }
