@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{box-sizing: border-box;}
+    html, body{
+      height: 100%;
+      overflow: hidden;
+    }
+    #carbox{
+      position: absolute;
+      width: 40px;
+      top: 10px;
+      transform: rotate(180deg);
+    }
+    #carbox img{
+      max-width: 100%;
+    }
+    .parking{
+      width: 60px;
+      height: 60px;
+      border-top: 5px solid transparent;
+      border-left: 5px solid #000;
+      border-right: 5px solid #000;
+      border-bottom: 5px solid #000;
+      position: fixed;
+      right: 10px;
+      bottom: 10px;
+    }
+  </style>
+  <script src="http://code.jquery.com/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $(document).keydown(function(event){
+        console.log(event.keyCode);
+        let keyCode = event.which||event.keyCode;
+        switch(keyCode){
+          case 39:
+            $("#carbox").css("transform","rotate(90dge)")
+            $("#carbox").animate({
+              left: "+=200px"
+            },300);
+            break;
+        }
+
+        switch(keyCode){
+          case 37:
+            $("#carbox").css("transform","rotate(-90dge)")
+            $("#carbox").animate({
+              left: "-=200px"
+            },300);
+            break;
+        }
+
+        switch(keyCode){
+          case 38:
+            $("#carbox").css("transform","rotate(0dge)")
+            $("#carbox").animate({
+              top: "-=200px"
+            },300);
+            break;
+        }
+
+        switch(keyCode){
+          case 40:
+            $("#carbox").css("transform","rotate(-180dge)")
+            $("#carbox").animate({
+              top: "+=200px"
+            },300);
+            break;
+        }
+      })
+    });
+  </script>
+</head>
+<body>
+  <div id="carbox">
+<img src="/Untitled-1.png" alt="car">
+  </div>
+  <div class="parking"></div>
+</body>
+</html>
