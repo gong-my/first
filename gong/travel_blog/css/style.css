@@ -7,8 +7,8 @@
 body {
   margin: 0;
   font-family: "Noto Sans KR", sans-serif;
-  background: url("/kjj/travel_blog/images/white\ map.png") no-repeat 40px -300px,
-    url("/kjj/travel_blog/images/background.gif") repeat-x left top;
+  background: url("/gong/travel_blog/images/white\ map.png") no-repeat 40px -300px,
+    url("/gong/travel_blog/images/background.gif") repeat-x left top;
 
   color: #000;
   font-size: 15px;
@@ -101,19 +101,56 @@ ul.main {
   padding: 0;
   display: flex;
   text-transform: uppercase;
-  width: 520px;
+  width: 620px;
   justify-content: space-between;
+}
+
+ul.main>li {
+  height: 35px;
+}
+
+.sub {
+  position: absolute;
+  z-index: 20;
+  background: rgba(255, 255, 255, .9);
+  border-radius: 10px;
+  padding: 30px;
+  width: 150px;
+  top: 30px;
+  left: -20px;
+  display: none;
+}
+
+.sub::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-bottom: 10px solid rgba(255, 255, 255, .9);
+  border-top: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  top: -18px;
+  left: 60px;
+}
+
+.sub a {
+  display: block;
+  padding: 5px 0;
+  border-bottom: 1px dashed #ddd;
 }
 
 a.logo {
   display: block;
   width: 160px;
   height: 160px;
-  background: url(/kjj/travel_blog/images/logo.png) no-repeat center;
+  background: url(../images/logo.png) no-repeat center;
   background-size: 245px;
   margin: 35px auto 0;
   border-radius: 50%;
 }
+
 
 /* HERO SECTION */
 .hero {
@@ -152,7 +189,7 @@ a.logo {
 }
 
 .hero-box {
-  background: url(/kjj/travel_blog/images/all\ map.png) no-repeat center;
+  background: url(../images/map.png) no-repeat center;
   position: relative;
   display: flex;
   justify-content: center;
@@ -190,21 +227,17 @@ a.logo {
   width: 120px;
 }
 
+
 /* video section */
 section.video {
   background: url(../images/KakaoTalk_20250120_125341653.gif) repeat-x;
-  min-height: 1000px;
-  padding-bottom: 100px;
-  overflow-x: hidden;
+  padding: 0 0 150px;
+  overflow: hidden;
 }
 
 .partner {
-  width: 750px;
   margin: 0 auto 50px;
-}
-
-.partner img {
-  position: absolute;
+  width: 750px;
 }
 
 .partner>a {
@@ -213,8 +246,7 @@ section.video {
   height: 105px;
   border-top: 1px solid #d9d9d9;
   border-right: 1px solid #d9d9d9;
-  background: white;
-  position: relative;
+  background: #fff;
 }
 
 .partner>a:first-child {
@@ -223,12 +255,22 @@ section.video {
 
 .partner>a:nth-child(5) {
   border-left: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9
+}
+
+.partner>a:nth-child(n+6) {
+  /** 6이상 **/
   border-bottom: 1px solid #d9d9d9;
 }
 
-/*6이상*/
-.partner>a:nth-child(n+6) {
-  border-bottom: 1px solid #d9d9d9;
+.partner>a {
+  position: relative;
+}
+
+.partner img {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .partner>a img {
@@ -236,17 +278,17 @@ section.video {
   height: 100%;
   object-fit: cover;
   filter: opacity(0.7);
-  transition: all 0.3s;
+  transition: all 300ms;
 }
 
-.partner>a img:hover {
+.partner>a:hover img {
   filter: opacity(1);
   width: 105%;
   height: 105%;
   top: -2.5%;
   left: -2.5%;
   z-index: 2;
-  border: 1px solid #ddd
+  border: 1px solid #ddd;
 }
 
 p.partner-title {
@@ -259,15 +301,15 @@ p.partner-title {
 
 h1.partner-title {
   font-size: 50px;
-  font-weight: 400;
-  margin-block-start: 20px;
+  font-weight: 300;
+  margin-block-start: 10px;
 }
 
 .subscribe {
   display: block;
   width: 230px;
   height: 50px;
-  background-color: #ff0000;
+  background: #ff0000;
   margin: 60px auto;
   color: #fff;
   font-size: 20px;
@@ -287,23 +329,22 @@ h1.partner-title {
   margin-left: -3px;
   margin-right: -3px;
   background-color: #ffe9e4;
+  min-height: 550px;
 }
 
 .vod-box {
-  padding-left: 3px;
-  padding-right: 3px;
   position: relative;
-  width: 33.3333%;
-  height: 350px;
   padding: 0 3px 50px;
+  width: 33.333333%;
+  height: 350px;
 }
 
 .myvideo {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 350px;
+  top: 0;
+  left: 0;
 }
 
 .myvideo-btn {
@@ -316,7 +357,7 @@ h1.partner-title {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  transition: all 0.3s;
+  transition: all 300ms;
 }
 
 .myvideo-btn::after {
@@ -331,7 +372,7 @@ h1.partner-title {
   top: 50%;
   left: 50%;
   transform: translate(-20%, -50%);
-  transition: all 0.3s;
+  transition: all 300ms;
 }
 
 .myvideo-btn:hover {
@@ -343,16 +384,74 @@ h1.partner-title {
 }
 
 .vod-box p {
-  position: absolute;
-  bottom: -80px;
+  position: relative;
+  top: 370px;
   font-weight: 600;
   font-size: 20px;
   width: 300px;
   left: calc(50% - 150px);
 }
 
-/* best places */
+.vdo-popup-back {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+  display: none;
+}
 
+.vdo-popup {
+  background-color: #fff;
+  width: 800px;
+  height: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.vdo-popup video {
+  width: 100%;
+  height: 100%;
+}
+.close{
+  width: 40px;
+  height: 40px;
+position: absolute;
+top: 30px;
+right: 30px;
+z-index: 1000;
+cursor: pointer;
+transition: all 300ms;
+transform-origin: 100% 100% 25%;
+}
+.close:hover{
+  transform: rotate(360deg);
+}
+.close>span{
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: rgba(100 , 255, 255, 0.8);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+.close:hover>span{
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+.close>span:first-child{
+  transform: rotate(45deg);
+}
+.close>span:last-child{
+  transform: translate(0,-1px)rotate(-45deg);
+}
+/*********** Best Places **************/
 .best {
   margin-top: 90px;
 }
@@ -362,7 +461,7 @@ h1.partner-title {
   font-weight: 400;
 }
 
-.viewall {
+a.viewall {
   font-size: 20px;
   color: #c95f5f;
   text-decoration: underline;
@@ -387,7 +486,7 @@ h1.partner-title {
 }
 
 .best-link {
-  color: black;
+  color: #000;
   font-weight: 600;
   font-size: 24px;
   line-height: 45px;
@@ -400,14 +499,14 @@ h1.partner-title {
   height: 45px;
   bottom: 50px;
   left: calc(50% - 100px);
-  transition: all 0.3s;
+  transition: all 300ms;
 }
 
 .best-link:hover {
   background: rgba(255, 255, 255, 1);
 }
 
-/* section mailing */
+/************ section mailing ****/
 .mailing-form-box {
   background-color: #ffe9e4;
   padding-top: 55px;
@@ -430,23 +529,23 @@ h1.partner-title {
   width: 100%;
   padding: 15px 30px;
   border: 1px solid #d9d9d9;
-
 }
 
 .mailing-form-box input::placeholder {
   color: #d9d9d9;
 }
 
-/* work with me section */
+/*********** workme section ************/
 .workme {
   padding-top: 80px;
-
 }
 
-/* 반응형 정사각형 만드는법 */
+/** 반응형 정사각형 만드는 법 **/
 .square {
   width: 100%;
+  /* 가로 너비 100% */
   padding-top: 100%;
+  /* 세로크기는 가로 크기의 100% */
   position: relative;
 }
 
@@ -470,46 +569,122 @@ h1.partner-title {
   right: -50px;
 }
 
+.bg-map {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: url(../images/background-asia-map.png) no-repeat center;
+  background-size: 95%;
+}
+
 .bg-map h3,
-.bg-map p  {
+.bg-map p {
   width: 230px;
   text-align: center;
   border-bottom: 1px solid #c95f5f;
   margin: 0;
 }
-.bg-map{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: url(../images/map.png) no-repeat center;
-  background-size: 95%;
-}
-.bg-map h3.current{
+
+.bg-map h3.current {
   margin-top: 60px;
 }
-.bg-map h3{
+
+.bg-map h3 {
   font-size: 32px;
   font-weight: 400;
 }
-.bg-map p{
+
+.bg-map p {
   font-weight: 300;
 }
-.bg-map>p:first-of-type{
-border: none;
+
+.bg-map>p:first-of-type {
+  border: none;
 }
-.next{
+
+.next {
   margin-top: 75px;
 }
-.bg-map i{
+
+.next p {
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+.bg-map i.ri-map-pin-2-fill {
   color: #c95f5f;
   font-size: 24px;
   position: absolute;
-  top: 220px;
+  top: 216px;
   right: 260px;
 }
-.hr{
-  margin-top:120px ;
+
+.hr {
+  margin-top: 120px;
   margin-bottom: 90px;
   border: none;
   border-bottom: 1px solid #d9d9d9;
+}
+
+/************* instagram section ***/
+.instagram h1 {
+  font-size: 40px;
+  font-weight: 400;
+  margin-top: 80px;
+}
+
+.insta-back {
+  background-color: #ffe9e4;
+  width: 100%;
+  height: 150px;
+  top: 80px;
+}
+
+.insta-link {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.insta-link a {
+  font-size: 20px;
+  font-weight: 300;
+  color: #c95f5f;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+
+.insta-img div {
+  width: 20%;
+  position: relative;
+}
+
+.insta-img div::after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.insta-img img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+footer .footer {
+  margin: 50px auto;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 300;
+  color: #757575;
+  justify-content: space-between;
+  width: 540px;
+}
+
+.sns-box {
+  font-size: 20px;
+  font-weight: 300;
+  text-align: center;
 }

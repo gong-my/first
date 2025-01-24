@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="/gong/travel_blog/css/style.css" />
-    <script src="/kjj/travel_blog/js/jquery-1.12.4.min.js"></script>
-    <script src="/kjj/travel_blog/js/script.js"></script>
+    <script src="/gong/class/jquery/js/jquery-1.12.4.js"></script>
+    <script src="/gong/travel_blog/js/script.js"></script>
   </head>
   <body>
     <header>
@@ -20,13 +20,22 @@
         <!--메뉴-->
         <ul class="main">
           <li><a href="#" class="act">home</a></li>
-          <li><a href="#">about me</a></li>
-          <li>
+          <li><a href="#about">about me</a></li>
+          <li class="p-relative">
             <a href="#">destination <i class="ri-arrow-down-s-line"></i></a>
+            <div class="sub">
+              <a href="#">프랑스 파리</a>
+              <a href="#">독일 마인츠</a>
+              <a href="#">이태리 로마</a>
+              <a href="#">중국 상하이</a>
+              <a href="#">일본 오사카</a>
+            </div>
           </li>
-          <li><a href="#">photos</a></li>
-          <li><a href="#">work with me</a></li>
+          <li><a href="#video">video</a></li>
+          <li><a href="#best">best places</a></li>
+          <li><a href="#workme">work with me</a></li>
         </ul>
+
         <!--search-->
         <div class="searchbox">
           <a href="#"><i class="ri-search-2-line"></i></a>
@@ -60,7 +69,7 @@
             <div class="col-offset-3 col-7">
               <img src="/gong/class/images/pd/004.jpg" alt="h04" />
             </div>
-            <div class="col-offset-6 col-6 hero-card">
+            <div class="col-offset-6 col-6 hero-card" id="about">
               <h1 class="vintage">Hello I'm Soony!</h1>
               <p class="serif">
                 국회의원의 수는 법률로 정하되, 200인 이상으로 한다. 대한민국은
@@ -116,33 +125,54 @@
       <p class="partner-title">check out my</p>
       <h1 class="partner-title vintage text-center">latest video</h1>
       <a href="#" class="subscribe"><i class="ri-youtube-fill"></i>subscribe</a>
-      <div class="vod d-flex">
+      <div class="vod d-flex" id="vod">
         <div class="vod-box">
-          <video class="myvideo">
+          <video class="myvideo" muted>
             <source src="vod/12750860_3840_2160_24fps.mp4" type="video/mp4" />
           </video>
-          <div class="myvideo-btn"></div>
+          <div
+            class="myvideo-btn"
+            data-vdo="12750860_3840_2160_24fps.mp4"
+          ></div>
           <p class="text-center">
             Ea eiusmod eu aliqua tempor aute pariatur dolor.
           </p>
         </div>
         <div class="vod-box">
-          <video class="myvideo">
+          <video class="myvideo" muted>
             <source src="vod/12886208_1920_1080_60fps.mp4" type="video/mp4" />
           </video>
-          <div class="myvideo-btn"></div>
+          <div
+            class="myvideo-btn"
+            data-vdo="12886208_1920_1080_60fps.mp4"
+          ></div>
           <p class="text-center">
             Ea eiusmod eu aliqua tempor aute pariatur dolor.
           </p>
         </div>
         <div class="vod-box">
-          <video class="myvideo">
+          <video class="myvideo" muted>
             <source src="vod/12777303_3840_2160_30fps.mp4" type="video/mp4" />
           </video>
-          <div class="myvideo-btn"></div>
+          <div
+            class="myvideo-btn"
+            data-vdo="12777303_3840_2160_30fps.mp4"
+          ></div>
           <p class="text-center">
             Ea eiusmod eu aliqua tempor aute pariatur dolor.
           </p>
+        </div>
+      </div>
+      <!-- video popup -->
+      <div class="vdo-popup-back" id="vdo-back">
+        <div class="vdo-popup">
+          <video controls id="viewvideo">
+            <source src="" type="video/mp4" />
+          </video>
+          <div class="close">
+            <span></span>
+            <span></span>
+          </div>
         </div>
       </div>
     </section>
@@ -151,27 +181,27 @@
       <h1 class="text-center">Best places to Visit</h1>
       <p class="text-center"><a href="#" class="viewall">VIEW ALL</a></p>
       <div class="bg-f5">
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <img src="images/Mask group-1.png" alt="001" />
-            <a href="#" class="best-link">어딘가</a>
-          </div>
-          <div class="col">
-            <img src="images/Mask group-2.png" alt="002" />
-            <a href="#" class="best-link">어딘가</a>
-          </div>
-          <div class="col">
-            <img src="images/Mask group-3.png" alt="003" />
-            <a href="#" class="best-link">어딘가</a>
-          </div>
-          <div class="col">
-            <img src="images/Mask group.png" alt="004" />
-            <a href="#" class="best-link">어딘가</a>
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <img src="images/Mask group-1.png" alt="001" />
+              <a href="#" class="best-link">어딘가</a>
+            </div>
+            <div class="col">
+              <img src="images/Mask group-2.png" alt="002" />
+              <a href="#" class="best-link">어딘가</a>
+            </div>
+            <div class="col">
+              <img src="images/Mask group-3.png" alt="003" />
+              <a href="#" class="best-link">어딘가</a>
+            </div>
+            <div class="col">
+              <img src="images/Mask group.png" alt="004" />
+              <a href="#" class="best-link">어딘가</a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
     </section>
     <!-- mailing -->
     <section id="mailing" class="mailing bg-f5">
@@ -194,34 +224,68 @@
     <!-- work with me -->
     <section class="workme bg-f5" id="workme">
       <div class="container">
-      <div class="row">
-        <div class="col-offset-1 col-5 p-relative">
-          <div class="square">
-            <div class="square-content">
-              <img src="/gong/class/images/pd/001.jpg" alt="me" />
+        <div class="row">
+          <div class="col-offset-1 col-5 p-relative">
+            <div class="square">
+              <div class="square-content">
+                <img src="/gong/class/images/pd/001.jpg" alt="me" />
+              </div>
+            </div>
+            <img src="images/sign.png" class="me-sign" alt="sign" />
+          </div>
+          <div class="col-5 bg-map">
+            <h3 class="vintage current">Current Location</h3>
+            <p>대한민국 경기도 김포시 장기동</p>
+            <i class="ri-map-pin-2-fill"></i>
+            <div class="next">
+              <h3 class="vintage">Next Stops</h3>
+              <p>뉴질랜드</p>
+              <p>하와이</p>
+              <p>남극</p>
             </div>
           </div>
-          <img src="images/sign.png" class="me-sign" alt="sign" />
-        </div>
-        <div class="col-5 bg-map">
-          <h3 class="vintage current">Current Location</h3>
-          <p>대한민국 경기도 김포시 장기동</p>
-          <i class="ri-map-pin-2-fill"></i>
-          <div class="next">
-            <h3 class="vintage">Next Stops</h3>
-            <p>뉴질랜드</p>
-            <p>하와이</p>
-            <p>남극</p>
+          <div class="col-offset-1 col-10">
+            <hr class="hr" />
           </div>
         </div>
-        <div class="col-offset-1 col-10">
-          <hr class="hr">
-        </div>
       </div>
-    </div>
     </section>
     <section class="instagram" id="instagram">
-      
+      <h1 class="text-center"><i class="ri-instagram-fill"></i> instagram</h1>
+      <div class="insta-link"><a href="#">follw on instagram</a></div>
+      <div class="insta-imgbox p-relative">
+        <div class="insta-back p-absolute"></div>
+        <div class="container p-relative">
+          <div class="col-offset-1 col-10 d-flex insta-img">
+            <div><img src="images/insta.png" alt="001" /></div>
+            <div><img src="images/insta1.png" alt="001" /></div>
+            <div><img src="images/insta2.png" alt="001" /></div>
+            <div><img src="images/insta3.png" alt="001" /></div>
+            <div><img src="images/insta4.png" alt="001" /></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="footer-box">
+      <footer>
+        <nav>
+          <div class="footer">
+            <a href="#">home</a>
+            <a href="#">about me</a>
+            <a href="#">destination</a>
+            <a href="#">photos</a>
+            <a href="#">work with me</a>
+          </div>
+        </nav>
+        <div class="sns-box">
+          <a href="#"><i class="ri-instagram-line"></i></a>
+          <a href="#"><i class="ri-twitter-x-line"></i></a>
+          <a href="#"><i class="ri-kakao-talk-line"></i></a>
+        </div>
+        <div class="copyright">
+          <p class="text-center">copyleft &copy; akejk's all copy reserved</p>
+        </div>
+      </footer>
     </section>
   </body>
 </html>
