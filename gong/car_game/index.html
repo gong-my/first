@@ -1,85 +1,119 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-    *{box-sizing: border-box;}
-    html, body{
-      height: 100%;
-      overflow: hidden;
-    }
-    #carbox{
-      position: absolute;
-      width: 40px;
-      top: 10px;
-      transform: rotate(180deg);
-    }
-    #carbox img{
-      max-width: 100%;
-    }
-    .parking{
-      width: 60px;
-      height: 60px;
-      border-top: 5px solid transparent;
-      border-left: 5px solid #000;
-      border-right: 5px solid #000;
-      border-bottom: 5px solid #000;
-      position: fixed;
-      right: 10px;
-      bottom: 10px;
-    }
-  </style>
-  <script src="http://code.jquery.com/jquery.min.js"></script>
-  <script>
-    $(document).ready(function(){
-      $(document).keydown(function(event){
-        console.log(event.keyCode);
-        let keyCode = event.which||event.keyCode;
-        switch(keyCode){
-          case 39:
-            $("#carbox").css("transform","rotate(90dge)")
-            $("#carbox").animate({
-              left: "+=200px"
-            },300);
-            break;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Game</title>
+    <style>
+        *{ box-sizing: border-box;}
+        html,body{
+            height:100%;
+            overflow:hidden;
         }
+        #carbox{
+            position:absolute;
+            width:40px;
+            top:10px;
+            transform: rotate(180deg);
+        }
+        #carbox img{
+            max-width:100%;
+        }
+        #clouds{
+            position:absolute;
+            width:30px;
+            left:50%;
+            transform:translateX(-50%);
+            display:none;
+        }
+        #clouds img{
+            max-width:100%;
+        }
+        .parking{
+            /** 주차장 **/
+            width:60px;
+            height:60px;
+            border-top: 5px solid transparent;
+            border-left: 5px solid #000;
+            border-right: 5px solid #000;
+            border-bottom:5px solid #000;
+            position:fixed;
+            right:10px;
+            bottom:10px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+           $(document).keydown(function(event){
+              console.log(event.keyCode);
+             /*
+              키 코드값 : left 37 up-38 right-39  down-40
+             */
+             let keyCode = event.which||event.keyCode;
+             switch(keyCode) {
+                case 37:
+                  $("#carbox").css("transform", "rotate(-90deg)"); 
+                  $("#clouds").show();
+                  $("#carbox").stop().animate({
+                      left: "-=20px"
+                  }, 50, function(){
+                    $("#clouds").hide();      
+                  });
+                break;
+                case 38:
+                  $("#carbox").css("transform", "rotate(0deg)"); 
+                  $("#clouds").show();
+                  $("#carbox").stop().animate({
+                      top: "-=20px"
+                  }, 50, function(){
+                    $("#clouds").hide();      
+                  });
+                break;
+                case 39:
+                  $("#carbox").css("transform", "rotate(90deg)"); 
+                  $("#clouds").show();
+                  $("#carbox").stop().animate({
+                      left: "+=20px"
+                  }, 50, function(){
+                    $("#clouds").hide();      
+                  });
+                break;      
+                case 40:
+                  $("#carbox").css("transform", "rotate(-180deg)"); 
+                  $("#clouds").show();
+                  $("#carbox").stop().animate({
+                      top: "+=20px"
+                  }, 50, function(){
+                    $("#clouds").hide();      
+                  });
+                break;    
+                default: 
+                  $("#carbox").stop();
+                  $("#clouds").hide();      
+             }
+           });
+        });
 
-        switch(keyCode){
-          case 37:
-            $("#carbox").css("transform","rotate(-90dge)")
-            $("#carbox").animate({
-              left: "-=200px"
-            },300);
-            break;
-        }
+        function checkcol(){
+          const car = $("#carbox");
+          const parking = $(".parking");
 
-        switch(keyCode){
-          case 38:
-            $("#carbox").css("transform","rotate(0dge)")
-            $("#carbox").animate({
-              top: "-=200px"
-            },300);
-            break;
-        }
+          const carleft = car.offset().left;
+          const cartop = car.offset().top;
 
-        switch(keyCode){
-          case 40:
-            $("#carbox").css("transform","rotate(-180dge)")
-            $("#carbox").animate({
-              top: "+=200px"
-            },300);
-            break;
+          const parkingleft = parking.offset().left;
+          const parkingtop = parking.offset().top;
         }
-      })
-    });
-  </script>
+    </script>
 </head>
 <body>
-  <div id="carbox">
-<img src="/Untitled-1.png" alt="car">
-  </div>
-  <div class="parking"></div>
+    <div id="carbox">
+        <img src="car.png" alt="방구차" />
+        <div id="clouds">
+            <img src="gas.gif" alt="매연" />
+        </div>
+    </div>
+    <div class="parking"></div>
 </body>
 </html>
